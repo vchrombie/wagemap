@@ -1,0 +1,2027 @@
+[
+  {
+    "code": "11-1011.00",
+    "parent": "11-1011",
+    "title": "Chief Executives"
+  },
+  {
+    "code": "11-1011.03",
+    "parent": "11-1011",
+    "title": "Chief Sustainability Officers"
+  },
+  {
+    "code": "11-1021.00",
+    "parent": "11-1021",
+    "title": "General and Operations Managers"
+  },
+  {
+    "code": "11-1031.00",
+    "parent": "11-1031",
+    "title": "Legislators"
+  },
+  {
+    "code": "11-2011.00",
+    "parent": "11-2011",
+    "title": "Advertising and Promotions Managers"
+  },
+  {
+    "code": "11-2021.00",
+    "parent": "11-2021",
+    "title": "Marketing Managers"
+  },
+  {
+    "code": "11-2022.00",
+    "parent": "11-2022",
+    "title": "Sales Managers"
+  },
+  {
+    "code": "11-2032.00",
+    "parent": "11-2032",
+    "title": "Public Relations Managers"
+  },
+  {
+    "code": "11-2033.00",
+    "parent": "11-2033",
+    "title": "Fundraising Managers"
+  },
+  {
+    "code": "11-3012.00",
+    "parent": "11-3012",
+    "title": "Administrative Services Managers"
+  },
+  {
+    "code": "11-3013.00",
+    "parent": "11-3013",
+    "title": "Facilities Managers"
+  },
+  {
+    "code": "11-3013.01",
+    "parent": "11-3013",
+    "title": "Security Managers"
+  },
+  {
+    "code": "11-3021.00",
+    "parent": "11-3021",
+    "title": "Computer and Information Systems Managers"
+  },
+  {
+    "code": "11-3031.00",
+    "parent": "11-3031",
+    "title": "Financial Managers"
+  },
+  {
+    "code": "11-3031.01",
+    "parent": "11-3031",
+    "title": "Treasurers and Controllers"
+  },
+  {
+    "code": "11-3031.03",
+    "parent": "11-3031",
+    "title": "Investment Fund Managers"
+  },
+  {
+    "code": "11-3051.00",
+    "parent": "11-3051",
+    "title": "Industrial Production Managers"
+  },
+  {
+    "code": "11-3051.01",
+    "parent": "11-3051",
+    "title": "Quality Control Systems Managers"
+  },
+  {
+    "code": "11-3051.02",
+    "parent": "11-3051",
+    "title": "Geothermal Production Managers"
+  },
+  {
+    "code": "11-3051.03",
+    "parent": "11-3051",
+    "title": "Biofuels Production Managers"
+  },
+  {
+    "code": "11-3051.04",
+    "parent": "11-3051",
+    "title": "Biomass Power Plant Managers"
+  },
+  {
+    "code": "11-3051.06",
+    "parent": "11-3051",
+    "title": "Hydroelectric Production Managers"
+  },
+  {
+    "code": "11-3061.00",
+    "parent": "11-3061",
+    "title": "Purchasing Managers"
+  },
+  {
+    "code": "11-3111.00",
+    "parent": "11-3111",
+    "title": "Compensation and Benefits Managers"
+  },
+  {
+    "code": "11-3121.00",
+    "parent": "11-3121",
+    "title": "Human Resources Managers"
+  },
+  {
+    "code": "11-3131.00",
+    "parent": "11-3131",
+    "title": "Training and Development Managers"
+  },
+  {
+    "code": "11-9021.00",
+    "parent": "11-9021",
+    "title": "Construction Managers"
+  },
+  {
+    "code": "11-9031.00",
+    "parent": "11-9031",
+    "title": "Education and Childcare Administrators, Preschool and Daycare"
+  },
+  {
+    "code": "11-9032.00",
+    "parent": "11-9032",
+    "title": "Education Administrators, Kindergarten through Secondary"
+  },
+  {
+    "code": "11-9033.00",
+    "parent": "11-9033",
+    "title": "Education Administrators, Postsecondary"
+  },
+  {
+    "code": "11-9039.00",
+    "parent": "11-9039",
+    "title": "Education Administrators, All Other"
+  },
+  {
+    "code": "11-9041.00",
+    "parent": "11-9041",
+    "title": "Architectural and Engineering Managers"
+  },
+  {
+    "code": "11-9041.01",
+    "parent": "11-9041",
+    "title": "Biofuels/Biodiesel Technology and Product Development Managers"
+  },
+  {
+    "code": "11-9072.00",
+    "parent": "11-9072",
+    "title": "Entertainment and Recreation Managers, Except Gambling"
+  },
+  {
+    "code": "11-9111.00",
+    "parent": "11-9111",
+    "title": "Medical and Health Services Managers"
+  },
+  {
+    "code": "11-9121.00",
+    "parent": "11-9121",
+    "title": "Natural Sciences Managers"
+  },
+  {
+    "code": "11-9121.01",
+    "parent": "11-9121",
+    "title": "Clinical Research Coordinators"
+  },
+  {
+    "code": "11-9121.02",
+    "parent": "11-9121",
+    "title": "Water Resource Specialists"
+  },
+  {
+    "code": "11-9151.00",
+    "parent": "11-9151",
+    "title": "Social and Community Service Managers"
+  },
+  {
+    "code": "11-9161.00",
+    "parent": "11-9161",
+    "title": "Emergency Management Directors"
+  },
+  {
+    "code": "11-9199.00",
+    "parent": "11-9199",
+    "title": "Managers, All Other"
+  },
+  {
+    "code": "11-9199.01",
+    "parent": "11-9199",
+    "title": "Regulatory Affairs Managers"
+  },
+  {
+    "code": "11-9199.02",
+    "parent": "11-9199",
+    "title": "Compliance Managers"
+  },
+  {
+    "code": "11-9199.08",
+    "parent": "11-9199",
+    "title": "Loss Prevention Managers"
+  },
+  {
+    "code": "11-9199.09",
+    "parent": "11-9199",
+    "title": "Wind Energy Operations Managers"
+  },
+  {
+    "code": "11-9199.10",
+    "parent": "11-9199",
+    "title": "Wind Energy Development Managers"
+  },
+  {
+    "code": "11-9199.11",
+    "parent": "11-9199",
+    "title": "Brownfield Redevelopment Specialists and Site Managers"
+  },
+  {
+    "code": "13-1011.00",
+    "parent": "13-1011",
+    "title": "Agents and Business Managers of Artists, Performers, and Athletes"
+  },
+  {
+    "code": "13-1021.00",
+    "parent": "13-1021",
+    "title": "Buyers and Purchasing Agents, Farm Products"
+  },
+  {
+    "code": "13-1022.00",
+    "parent": "13-1022",
+    "title": "Wholesale and Retail Buyers, Except Farm Products"
+  },
+  {
+    "code": "13-1023.00",
+    "parent": "13-1023",
+    "title": "Purchasing Agents, Except Wholesale, Retail, and Farm Products"
+  },
+  {
+    "code": "13-1041.00",
+    "parent": "13-1041",
+    "title": "Compliance Officers"
+  },
+  {
+    "code": "13-1041.01",
+    "parent": "13-1041",
+    "title": "Environmental Compliance Inspectors"
+  },
+  {
+    "code": "13-1041.03",
+    "parent": "13-1041",
+    "title": "Equal Opportunity Representatives and Officers"
+  },
+  {
+    "code": "13-1041.04",
+    "parent": "13-1041",
+    "title": "Government Property Inspectors and Investigators"
+  },
+  {
+    "code": "13-1041.06",
+    "parent": "13-1041",
+    "title": "Coroners"
+  },
+  {
+    "code": "13-1041.07",
+    "parent": "13-1041",
+    "title": "Regulatory Affairs Specialists"
+  },
+  {
+    "code": "13-1041.08",
+    "parent": "13-1041",
+    "title": "Customs Brokers"
+  },
+  {
+    "code": "13-1051.00",
+    "parent": "13-1051",
+    "title": "Cost Estimators"
+  },
+  {
+    "code": "13-1071.00",
+    "parent": "13-1071",
+    "title": "Human Resources Specialists"
+  },
+  {
+    "code": "13-1075.00",
+    "parent": "13-1075",
+    "title": "Labor Relations Specialists"
+  },
+  {
+    "code": "13-1081.00",
+    "parent": "13-1081",
+    "title": "Logisticians"
+  },
+  {
+    "code": "13-1081.01",
+    "parent": "13-1081",
+    "title": "Logistics Engineers"
+  },
+  {
+    "code": "13-1081.02",
+    "parent": "13-1081",
+    "title": "Logistics Analysts"
+  },
+  {
+    "code": "13-1082.00",
+    "parent": "13-1082",
+    "title": "Project Management Specialists"
+  },
+  {
+    "code": "13-1111.00",
+    "parent": "13-1111",
+    "title": "Management Analysts"
+  },
+  {
+    "code": "13-1121.00",
+    "parent": "13-1121",
+    "title": "Meeting, Convention, and Event Planners"
+  },
+  {
+    "code": "13-1131.00",
+    "parent": "13-1131",
+    "title": "Fundraisers"
+  },
+  {
+    "code": "13-1141.00",
+    "parent": "13-1141",
+    "title": "Compensation, Benefits, and Job Analysis Specialists"
+  },
+  {
+    "code": "13-1151.00",
+    "parent": "13-1151",
+    "title": "Training and Development Specialists"
+  },
+  {
+    "code": "13-1161.00",
+    "parent": "13-1161",
+    "title": "Market Research Analysts and Marketing Specialists"
+  },
+  {
+    "code": "13-1161.01",
+    "parent": "13-1161",
+    "title": "Search Marketing Strategists"
+  },
+  {
+    "code": "13-1199.00",
+    "parent": "13-1199",
+    "title": "Business Operations Specialists, All Other"
+  },
+  {
+    "code": "13-1199.04",
+    "parent": "13-1199",
+    "title": "Business Continuity Planners"
+  },
+  {
+    "code": "13-1199.05",
+    "parent": "13-1199",
+    "title": "Sustainability Specialists"
+  },
+  {
+    "code": "13-1199.06",
+    "parent": "13-1199",
+    "title": "Online Merchants"
+  },
+  {
+    "code": "13-1199.07",
+    "parent": "13-1199",
+    "title": "Security Management Specialists"
+  },
+  {
+    "code": "13-2011.00",
+    "parent": "13-2011",
+    "title": "Accountants and Auditors"
+  },
+  {
+    "code": "13-2022.00",
+    "parent": "13-2022",
+    "title": "Appraisers of Personal and Business Property"
+  },
+  {
+    "code": "13-2023.00",
+    "parent": "13-2023",
+    "title": "Appraisers and Assessors of Real Estate"
+  },
+  {
+    "code": "13-2031.00",
+    "parent": "13-2031",
+    "title": "Budget Analysts"
+  },
+  {
+    "code": "13-2041.00",
+    "parent": "13-2041",
+    "title": "Credit Analysts"
+  },
+  {
+    "code": "13-2051.00",
+    "parent": "13-2051",
+    "title": "Financial and Investment Analysts"
+  },
+  {
+    "code": "13-2052.00",
+    "parent": "13-2052",
+    "title": "Personal Financial Advisors"
+  },
+  {
+    "code": "13-2053.00",
+    "parent": "13-2053",
+    "title": "Insurance Underwriters"
+  },
+  {
+    "code": "13-2054.00",
+    "parent": "13-2054",
+    "title": "Financial Risk Specialists"
+  },
+  {
+    "code": "13-2061.00",
+    "parent": "13-2061",
+    "title": "Financial Examiners"
+  },
+  {
+    "code": "13-2071.00",
+    "parent": "13-2071",
+    "title": "Credit Counselors"
+  },
+  {
+    "code": "13-2072.00",
+    "parent": "13-2072",
+    "title": "Loan Officers"
+  },
+  {
+    "code": "13-2081.00",
+    "parent": "13-2081",
+    "title": "Tax Examiners and Collectors, and Revenue Agents"
+  },
+  {
+    "code": "13-2099.00",
+    "parent": "13-2099",
+    "title": "Financial Specialists, All Other"
+  },
+  {
+    "code": "13-2099.01",
+    "parent": "13-2099",
+    "title": "Financial Quantitative Analysts"
+  },
+  {
+    "code": "13-2099.04",
+    "parent": "13-2099",
+    "title": "Fraud Examiners, Investigators and Analysts"
+  },
+  {
+    "code": "15-1211.00",
+    "parent": "15-1211",
+    "title": "Computer Systems Analysts"
+  },
+  {
+    "code": "15-1211.01",
+    "parent": "15-1211",
+    "title": "Health Informatics Specialists"
+  },
+  {
+    "code": "15-1212.00",
+    "parent": "15-1212",
+    "title": "Information Security Analysts"
+  },
+  {
+    "code": "15-1221.00",
+    "parent": "15-1221",
+    "title": "Computer and Information Research Scientists"
+  },
+  {
+    "code": "15-1241.00",
+    "parent": "15-1241",
+    "title": "Computer Network Architects"
+  },
+  {
+    "code": "15-1241.01",
+    "parent": "15-1241",
+    "title": "Telecommunications Engineering Specialists"
+  },
+  {
+    "code": "15-1242.00",
+    "parent": "15-1242",
+    "title": "Database Administrators"
+  },
+  {
+    "code": "15-1243.00",
+    "parent": "15-1243",
+    "title": "Database Architects"
+  },
+  {
+    "code": "15-1243.01",
+    "parent": "15-1243",
+    "title": "Data Warehousing Specialists"
+  },
+  {
+    "code": "15-1244.00",
+    "parent": "15-1244",
+    "title": "Network and Computer Systems Administrators"
+  },
+  {
+    "code": "15-1251.00",
+    "parent": "15-1251",
+    "title": "Computer Programmers"
+  },
+  {
+    "code": "15-1252.00",
+    "parent": "15-1252",
+    "title": "Software Developers"
+  },
+  {
+    "code": "15-1253.00",
+    "parent": "15-1253",
+    "title": "Software Quality Assurance Analysts and Testers"
+  },
+  {
+    "code": "15-1254.00",
+    "parent": "15-1254",
+    "title": "Web Developers"
+  },
+  {
+    "code": "15-1255.00",
+    "parent": "15-1255",
+    "title": "Web and Digital Interface Designers"
+  },
+  {
+    "code": "15-1255.01",
+    "parent": "15-1255",
+    "title": "Video Game Designers"
+  },
+  {
+    "code": "15-1299.00",
+    "parent": "15-1299",
+    "title": "Computer Occupations, All Other"
+  },
+  {
+    "code": "15-1299.01",
+    "parent": "15-1299",
+    "title": "Web Administrators"
+  },
+  {
+    "code": "15-1299.02",
+    "parent": "15-1299",
+    "title": "Geographic Information Systems Technologists and Technicians"
+  },
+  {
+    "code": "15-1299.03",
+    "parent": "15-1299",
+    "title": "Document Management Specialists"
+  },
+  {
+    "code": "15-1299.04",
+    "parent": "15-1299",
+    "title": "Penetration Testers"
+  },
+  {
+    "code": "15-1299.05",
+    "parent": "15-1299",
+    "title": "Information Security Engineers"
+  },
+  {
+    "code": "15-1299.06",
+    "parent": "15-1299",
+    "title": "Digital Forensics Analysts"
+  },
+  {
+    "code": "15-1299.07",
+    "parent": "15-1299",
+    "title": "Blockchain Engineers"
+  },
+  {
+    "code": "15-1299.08",
+    "parent": "15-1299",
+    "title": "Computer Systems Engineers/Architects"
+  },
+  {
+    "code": "15-1299.09",
+    "parent": "15-1299",
+    "title": "Information Technology Project Managers"
+  },
+  {
+    "code": "15-2011.00",
+    "parent": "15-2011",
+    "title": "Actuaries"
+  },
+  {
+    "code": "15-2021.00",
+    "parent": "15-2021",
+    "title": "Mathematicians"
+  },
+  {
+    "code": "15-2031.00",
+    "parent": "15-2031",
+    "title": "Operations Research Analysts"
+  },
+  {
+    "code": "15-2041.00",
+    "parent": "15-2041",
+    "title": "Statisticians"
+  },
+  {
+    "code": "15-2041.01",
+    "parent": "15-2041",
+    "title": "Biostatisticians"
+  },
+  {
+    "code": "15-2051.00",
+    "parent": "15-2051",
+    "title": "Data Scientists"
+  },
+  {
+    "code": "15-2051.01",
+    "parent": "15-2051",
+    "title": "Business Intelligence Analysts"
+  },
+  {
+    "code": "15-2051.02",
+    "parent": "15-2051",
+    "title": "Clinical Data Managers"
+  },
+  {
+    "code": "15-2099.00",
+    "parent": "15-2099",
+    "title": "Mathematical Science Occupations, All Other"
+  },
+  {
+    "code": "15-2099.01",
+    "parent": "15-2099",
+    "title": "Bioinformatics Technicians"
+  },
+  {
+    "code": "17-1011.00",
+    "parent": "17-1011",
+    "title": "Architects, Except Landscape and Naval"
+  },
+  {
+    "code": "17-1012.00",
+    "parent": "17-1012",
+    "title": "Landscape Architects"
+  },
+  {
+    "code": "17-1021.00",
+    "parent": "17-1021",
+    "title": "Cartographers and Photogrammetrists"
+  },
+  {
+    "code": "17-1022.00",
+    "parent": "17-1022",
+    "title": "Surveyors"
+  },
+  {
+    "code": "17-1022.01",
+    "parent": "17-1022",
+    "title": "Geodetic Surveyors"
+  },
+  {
+    "code": "17-2011.00",
+    "parent": "17-2011",
+    "title": "Aerospace Engineers"
+  },
+  {
+    "code": "17-2021.00",
+    "parent": "17-2021",
+    "title": "Agricultural Engineers"
+  },
+  {
+    "code": "17-2031.00",
+    "parent": "17-2031",
+    "title": "Bioengineers and Biomedical Engineers"
+  },
+  {
+    "code": "17-2041.00",
+    "parent": "17-2041",
+    "title": "Chemical Engineers"
+  },
+  {
+    "code": "17-2051.00",
+    "parent": "17-2051",
+    "title": "Civil Engineers"
+  },
+  {
+    "code": "17-2051.01",
+    "parent": "17-2051",
+    "title": "Transportation Engineers"
+  },
+  {
+    "code": "17-2051.02",
+    "parent": "17-2051",
+    "title": "Water/Wastewater Engineers"
+  },
+  {
+    "code": "17-2061.00",
+    "parent": "17-2061",
+    "title": "Computer Hardware Engineers"
+  },
+  {
+    "code": "17-2071.00",
+    "parent": "17-2071",
+    "title": "Electrical Engineers"
+  },
+  {
+    "code": "17-2072.00",
+    "parent": "17-2072",
+    "title": "Electronics Engineers, Except Computer"
+  },
+  {
+    "code": "17-2072.01",
+    "parent": "17-2072",
+    "title": "Radio Frequency Identification Device Specialists"
+  },
+  {
+    "code": "17-2081.00",
+    "parent": "17-2081",
+    "title": "Environmental Engineers"
+  },
+  {
+    "code": "17-2111.00",
+    "parent": "17-2111",
+    "title": "Health and Safety Engineers, Except Mining Safety Engineers and Inspectors"
+  },
+  {
+    "code": "17-2111.02",
+    "parent": "17-2111",
+    "title": "Fire-Prevention and Protection Engineers"
+  },
+  {
+    "code": "17-2112.00",
+    "parent": "17-2112",
+    "title": "Industrial Engineers"
+  },
+  {
+    "code": "17-2112.01",
+    "parent": "17-2112",
+    "title": "Human Factors Engineers and Ergonomists"
+  },
+  {
+    "code": "17-2112.02",
+    "parent": "17-2112",
+    "title": "Validation Engineers"
+  },
+  {
+    "code": "17-2112.03",
+    "parent": "17-2112",
+    "title": "Manufacturing Engineers"
+  },
+  {
+    "code": "17-2121.00",
+    "parent": "17-2121",
+    "title": "Marine Engineers and Naval Architects"
+  },
+  {
+    "code": "17-2131.00",
+    "parent": "17-2131",
+    "title": "Materials Engineers"
+  },
+  {
+    "code": "17-2141.00",
+    "parent": "17-2141",
+    "title": "Mechanical Engineers"
+  },
+  {
+    "code": "17-2141.01",
+    "parent": "17-2141",
+    "title": "Fuel Cell Engineers"
+  },
+  {
+    "code": "17-2141.02",
+    "parent": "17-2141",
+    "title": "Automotive Engineers"
+  },
+  {
+    "code": "17-2151.00",
+    "parent": "17-2151",
+    "title": "Mining and Geological Engineers, Including Mining Safety Engineers"
+  },
+  {
+    "code": "17-2161.00",
+    "parent": "17-2161",
+    "title": "Nuclear Engineers"
+  },
+  {
+    "code": "17-2171.00",
+    "parent": "17-2171",
+    "title": "Petroleum Engineers"
+  },
+  {
+    "code": "17-2199.00",
+    "parent": "17-2199",
+    "title": "Engineers, All Other"
+  },
+  {
+    "code": "17-2199.03",
+    "parent": "17-2199",
+    "title": "Energy Engineers, Except Wind and Solar"
+  },
+  {
+    "code": "17-2199.05",
+    "parent": "17-2199",
+    "title": "Mechatronics Engineers"
+  },
+  {
+    "code": "17-2199.06",
+    "parent": "17-2199",
+    "title": "Microsystems Engineers"
+  },
+  {
+    "code": "17-2199.07",
+    "parent": "17-2199",
+    "title": "Photonics Engineers"
+  },
+  {
+    "code": "17-2199.08",
+    "parent": "17-2199",
+    "title": "Robotics Engineers"
+  },
+  {
+    "code": "17-2199.09",
+    "parent": "17-2199",
+    "title": "Nanosystems Engineers"
+  },
+  {
+    "code": "17-2199.10",
+    "parent": "17-2199",
+    "title": "Wind Energy Engineers"
+  },
+  {
+    "code": "17-2199.11",
+    "parent": "17-2199",
+    "title": "Solar Energy Systems Engineers"
+  },
+  {
+    "code": "19-1011.00",
+    "parent": "19-1011",
+    "title": "Animal Scientists"
+  },
+  {
+    "code": "19-1012.00",
+    "parent": "19-1012",
+    "title": "Food Scientists and Technologists"
+  },
+  {
+    "code": "19-1013.00",
+    "parent": "19-1013",
+    "title": "Soil and Plant Scientists"
+  },
+  {
+    "code": "19-1021.00",
+    "parent": "19-1021",
+    "title": "Biochemists and Biophysicists"
+  },
+  {
+    "code": "19-1022.00",
+    "parent": "19-1022",
+    "title": "Microbiologists"
+  },
+  {
+    "code": "19-1023.00",
+    "parent": "19-1023",
+    "title": "Zoologists and Wildlife Biologists"
+  },
+  {
+    "code": "19-1029.00",
+    "parent": "19-1029",
+    "title": "Biological Scientists, All Other"
+  },
+  {
+    "code": "19-1029.01",
+    "parent": "19-1029",
+    "title": "Bioinformatics Scientists"
+  },
+  {
+    "code": "19-1029.02",
+    "parent": "19-1029",
+    "title": "Molecular and Cellular Biologists"
+  },
+  {
+    "code": "19-1029.03",
+    "parent": "19-1029",
+    "title": "Geneticists"
+  },
+  {
+    "code": "19-1029.04",
+    "parent": "19-1029",
+    "title": "Biologists"
+  },
+  {
+    "code": "19-1031.00",
+    "parent": "19-1031",
+    "title": "Conservation Scientists"
+  },
+  {
+    "code": "19-1031.02",
+    "parent": "19-1031",
+    "title": "Range Managers"
+  },
+  {
+    "code": "19-1031.03",
+    "parent": "19-1031",
+    "title": "Park Naturalists"
+  },
+  {
+    "code": "19-1032.00",
+    "parent": "19-1032",
+    "title": "Foresters"
+  },
+  {
+    "code": "19-1041.00",
+    "parent": "19-1041",
+    "title": "Epidemiologists"
+  },
+  {
+    "code": "19-1042.00",
+    "parent": "19-1042",
+    "title": "Medical Scientists, Except Epidemiologists"
+  },
+  {
+    "code": "19-1099.00",
+    "parent": "19-1099",
+    "title": "Life Scientists, All Other"
+  },
+  {
+    "code": "19-2011.00",
+    "parent": "19-2011",
+    "title": "Astronomers"
+  },
+  {
+    "code": "19-2012.00",
+    "parent": "19-2012",
+    "title": "Physicists"
+  },
+  {
+    "code": "19-2021.00",
+    "parent": "19-2021",
+    "title": "Atmospheric and Space Scientists"
+  },
+  {
+    "code": "19-2031.00",
+    "parent": "19-2031",
+    "title": "Chemists"
+  },
+  {
+    "code": "19-2032.00",
+    "parent": "19-2032",
+    "title": "Materials Scientists"
+  },
+  {
+    "code": "19-2041.00",
+    "parent": "19-2041",
+    "title": "Environmental Scientists and Specialists, Including Health"
+  },
+  {
+    "code": "19-2041.01",
+    "parent": "19-2041",
+    "title": "Climate Change Policy Analysts"
+  },
+  {
+    "code": "19-2041.02",
+    "parent": "19-2041",
+    "title": "Environmental Restoration Planners"
+  },
+  {
+    "code": "19-2041.03",
+    "parent": "19-2041",
+    "title": "Industrial Ecologists"
+  },
+  {
+    "code": "19-2042.00",
+    "parent": "19-2042",
+    "title": "Geoscientists, Except Hydrologists and Geographers"
+  },
+  {
+    "code": "19-2043.00",
+    "parent": "19-2043",
+    "title": "Hydrologists"
+  },
+  {
+    "code": "19-2099.00",
+    "parent": "19-2099",
+    "title": "Physical Scientists, All Other"
+  },
+  {
+    "code": "19-2099.01",
+    "parent": "19-2099",
+    "title": "Remote Sensing Scientists and Technologists"
+  },
+  {
+    "code": "19-3011.00",
+    "parent": "19-3011",
+    "title": "Economists"
+  },
+  {
+    "code": "19-3011.01",
+    "parent": "19-3011",
+    "title": "Environmental Economists"
+  },
+  {
+    "code": "19-3022.00",
+    "parent": "19-3022",
+    "title": "Survey Researchers"
+  },
+  {
+    "code": "19-3032.00",
+    "parent": "19-3032",
+    "title": "Industrial-Organizational Psychologists"
+  },
+  {
+    "code": "19-3033.00",
+    "parent": "19-3033",
+    "title": "Clinical and Counseling Psychologists"
+  },
+  {
+    "code": "19-3034.00",
+    "parent": "19-3034",
+    "title": "School Psychologists"
+  },
+  {
+    "code": "19-3039.00",
+    "parent": "19-3039",
+    "title": "Psychologists, All Other"
+  },
+  {
+    "code": "19-3039.02",
+    "parent": "19-3039",
+    "title": "Neuropsychologists"
+  },
+  {
+    "code": "19-3039.03",
+    "parent": "19-3039",
+    "title": "Clinical Neuropsychologists"
+  },
+  {
+    "code": "19-3041.00",
+    "parent": "19-3041",
+    "title": "Sociologists"
+  },
+  {
+    "code": "19-3051.00",
+    "parent": "19-3051",
+    "title": "Urban and Regional Planners"
+  },
+  {
+    "code": "19-3091.00",
+    "parent": "19-3091",
+    "title": "Anthropologists and Archeologists"
+  },
+  {
+    "code": "19-3092.00",
+    "parent": "19-3092",
+    "title": "Geographers"
+  },
+  {
+    "code": "19-3093.00",
+    "parent": "19-3093",
+    "title": "Historians"
+  },
+  {
+    "code": "19-3094.00",
+    "parent": "19-3094",
+    "title": "Political Scientists"
+  },
+  {
+    "code": "19-3099.00",
+    "parent": "19-3099",
+    "title": "Social Scientists and Related Workers, All Other"
+  },
+  {
+    "code": "19-3099.01",
+    "parent": "19-3099",
+    "title": "Transportation Planners"
+  },
+  {
+    "code": "19-4021.00",
+    "parent": "19-4021",
+    "title": "Biological Technicians"
+  },
+  {
+    "code": "19-4061.00",
+    "parent": "19-4061",
+    "title": "Social Science Research Assistants"
+  },
+  {
+    "code": "19-4092.00",
+    "parent": "19-4092",
+    "title": "Forensic Science Technicians"
+  },
+  {
+    "code": "19-5011.00",
+    "parent": "19-5011",
+    "title": "Occupational Health and Safety Specialists"
+  },
+  {
+    "code": "21-1011.00",
+    "parent": "21-1011",
+    "title": "Substance Abuse and Behavioral Disorder Counselors"
+  },
+  {
+    "code": "21-1012.00",
+    "parent": "21-1012",
+    "title": "Educational, Guidance, and Career Counselors and Advisors"
+  },
+  {
+    "code": "21-1013.00",
+    "parent": "21-1013",
+    "title": "Marriage and Family Therapists"
+  },
+  {
+    "code": "21-1014.00",
+    "parent": "21-1014",
+    "title": "Mental Health Counselors"
+  },
+  {
+    "code": "21-1015.00",
+    "parent": "21-1015",
+    "title": "Rehabilitation Counselors"
+  },
+  {
+    "code": "21-1019.00",
+    "parent": "21-1019",
+    "title": "Counselors, All Other"
+  },
+  {
+    "code": "21-1021.00",
+    "parent": "21-1021",
+    "title": "Child, Family, and School Social Workers"
+  },
+  {
+    "code": "21-1022.00",
+    "parent": "21-1022",
+    "title": "Healthcare Social Workers"
+  },
+  {
+    "code": "21-1023.00",
+    "parent": "21-1023",
+    "title": "Mental Health and Substance Abuse Social Workers"
+  },
+  {
+    "code": "21-1029.00",
+    "parent": "21-1029",
+    "title": "Social Workers, All Other"
+  },
+  {
+    "code": "21-1091.00",
+    "parent": "21-1091",
+    "title": "Health Education Specialists"
+  },
+  {
+    "code": "21-1092.00",
+    "parent": "21-1092",
+    "title": "Probation Officers and Correctional Treatment Specialists"
+  },
+  {
+    "code": "21-1099.00",
+    "parent": "21-1099",
+    "title": "Community and Social Service Specialists, All Other"
+  },
+  {
+    "code": "21-2011.00",
+    "parent": "21-2011",
+    "title": "Clergy"
+  },
+  {
+    "code": "21-2021.00",
+    "parent": "21-2021",
+    "title": "Directors, Religious Activities and Education"
+  },
+  {
+    "code": "21-2099.00",
+    "parent": "21-2099",
+    "title": "Religious Workers, All Other"
+  },
+  {
+    "code": "23-1011.00",
+    "parent": "23-1011",
+    "title": "Lawyers"
+  },
+  {
+    "code": "23-1012.00",
+    "parent": "23-1012",
+    "title": "Judicial Law Clerks"
+  },
+  {
+    "code": "23-1021.00",
+    "parent": "23-1021",
+    "title": "Administrative Law Judges, Adjudicators, and Hearing Officers"
+  },
+  {
+    "code": "23-1022.00",
+    "parent": "23-1022",
+    "title": "Arbitrators, Mediators, and Conciliators"
+  },
+  {
+    "code": "23-1023.00",
+    "parent": "23-1023",
+    "title": "Judges, Magistrate Judges, and Magistrates"
+  },
+  {
+    "code": "25-1011.00",
+    "parent": "25-1011",
+    "title": "Business Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1021.00",
+    "parent": "25-1021",
+    "title": "Computer Science Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1022.00",
+    "parent": "25-1022",
+    "title": "Mathematical Science Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1031.00",
+    "parent": "25-1031",
+    "title": "Architecture Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1032.00",
+    "parent": "25-1032",
+    "title": "Engineering Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1041.00",
+    "parent": "25-1041",
+    "title": "Agricultural Sciences Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1042.00",
+    "parent": "25-1042",
+    "title": "Biological Science Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1043.00",
+    "parent": "25-1043",
+    "title": "Forestry and Conservation Science Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1051.00",
+    "parent": "25-1051",
+    "title": "Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1052.00",
+    "parent": "25-1052",
+    "title": "Chemistry Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1053.00",
+    "parent": "25-1053",
+    "title": "Environmental Science Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1054.00",
+    "parent": "25-1054",
+    "title": "Physics Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1061.00",
+    "parent": "25-1061",
+    "title": "Anthropology and Archeology Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1062.00",
+    "parent": "25-1062",
+    "title": "Area, Ethnic, and Cultural Studies Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1063.00",
+    "parent": "25-1063",
+    "title": "Economics Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1064.00",
+    "parent": "25-1064",
+    "title": "Geography Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1065.00",
+    "parent": "25-1065",
+    "title": "Political Science Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1066.00",
+    "parent": "25-1066",
+    "title": "Psychology Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1067.00",
+    "parent": "25-1067",
+    "title": "Sociology Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1069.00",
+    "parent": "25-1069",
+    "title": "Social Sciences Teachers, Postsecondary, All Other"
+  },
+  {
+    "code": "25-1071.00",
+    "parent": "25-1071",
+    "title": "Health Specialties Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1072.00",
+    "parent": "25-1072",
+    "title": "Nursing Instructors and Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1081.00",
+    "parent": "25-1081",
+    "title": "Education Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1082.00",
+    "parent": "25-1082",
+    "title": "Library Science Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1111.00",
+    "parent": "25-1111",
+    "title": "Criminal Justice and Law Enforcement Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1112.00",
+    "parent": "25-1112",
+    "title": "Law Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1113.00",
+    "parent": "25-1113",
+    "title": "Social Work Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1121.00",
+    "parent": "25-1121",
+    "title": "Art, Drama, and Music Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1122.00",
+    "parent": "25-1122",
+    "title": "Communications Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1123.00",
+    "parent": "25-1123",
+    "title": "English Language and Literature Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1124.00",
+    "parent": "25-1124",
+    "title": "Foreign Language and Literature Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1125.00",
+    "parent": "25-1125",
+    "title": "History Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1126.00",
+    "parent": "25-1126",
+    "title": "Philosophy and Religion Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1192.00",
+    "parent": "25-1192",
+    "title": "Family and Consumer Sciences Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1193.00",
+    "parent": "25-1193",
+    "title": "Recreation and Fitness Studies Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1194.00",
+    "parent": "25-1194",
+    "title": "Career/Technical Education Teachers, Postsecondary"
+  },
+  {
+    "code": "25-1199.00",
+    "parent": "25-1199",
+    "title": "Postsecondary Teachers, All Other"
+  },
+  {
+    "code": "25-2012.00",
+    "parent": "25-2012",
+    "title": "Kindergarten Teachers, Except Special Education"
+  },
+  {
+    "code": "25-2021.00",
+    "parent": "25-2021",
+    "title": "Elementary School Teachers, Except Special Education"
+  },
+  {
+    "code": "25-2022.00",
+    "parent": "25-2022",
+    "title": "Middle School Teachers, Except Special and Career/Technical Education"
+  },
+  {
+    "code": "25-2023.00",
+    "parent": "25-2023",
+    "title": "Career/Technical Education Teachers, Middle School"
+  },
+  {
+    "code": "25-2031.00",
+    "parent": "25-2031",
+    "title": "Secondary School Teachers, Except Special and Career/Technical Education"
+  },
+  {
+    "code": "25-2032.00",
+    "parent": "25-2032",
+    "title": "Career/Technical Education Teachers, Secondary School"
+  },
+  {
+    "code": "25-2051.00",
+    "parent": "25-2051",
+    "title": "Special Education Teachers, Preschool"
+  },
+  {
+    "code": "25-2055.00",
+    "parent": "25-2055",
+    "title": "Special Education Teachers, Kindergarten"
+  },
+  {
+    "code": "25-2056.00",
+    "parent": "25-2056",
+    "title": "Special Education Teachers, Elementary School"
+  },
+  {
+    "code": "25-2057.00",
+    "parent": "25-2057",
+    "title": "Special Education Teachers, Middle School"
+  },
+  {
+    "code": "25-2058.00",
+    "parent": "25-2058",
+    "title": "Special Education Teachers, Secondary School"
+  },
+  {
+    "code": "25-2059.00",
+    "parent": "25-2059",
+    "title": "Special Education Teachers, All Other"
+  },
+  {
+    "code": "25-2059.01",
+    "parent": "25-2059",
+    "title": "Adapted Physical Education Specialists"
+  },
+  {
+    "code": "25-3011.00",
+    "parent": "25-3011",
+    "title": "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors"
+  },
+  {
+    "code": "25-3031.00",
+    "parent": "25-3031",
+    "title": "Substitute Teachers, Short-Term"
+  },
+  {
+    "code": "25-3099.00",
+    "parent": "25-3099",
+    "title": "Teachers and Instructors, All Other"
+  },
+  {
+    "code": "25-4011.00",
+    "parent": "25-4011",
+    "title": "Archivists"
+  },
+  {
+    "code": "25-4012.00",
+    "parent": "25-4012",
+    "title": "Curators"
+  },
+  {
+    "code": "25-4013.00",
+    "parent": "25-4013",
+    "title": "Museum Technicians and Conservators"
+  },
+  {
+    "code": "25-4022.00",
+    "parent": "25-4022",
+    "title": "Librarians and Media Collections Specialists"
+  },
+  {
+    "code": "25-9021.00",
+    "parent": "25-9021",
+    "title": "Farm and Home Management Educators"
+  },
+  {
+    "code": "25-9031.00",
+    "parent": "25-9031",
+    "title": "Instructional Coordinators"
+  },
+  {
+    "code": "25-9044.00",
+    "parent": "25-9044",
+    "title": "Teaching Assistants, Postsecondary"
+  },
+  {
+    "code": "25-9099.00",
+    "parent": "25-9099",
+    "title": "Educational Instruction and Library Workers, All Other"
+  },
+  {
+    "code": "27-1011.00",
+    "parent": "27-1011",
+    "title": "Art Directors"
+  },
+  {
+    "code": "27-1013.00",
+    "parent": "27-1013",
+    "title": "Fine Artists, Including Painters, Sculptors, and Illustrators"
+  },
+  {
+    "code": "27-1014.00",
+    "parent": "27-1014",
+    "title": "Special Effects Artists and Animators"
+  },
+  {
+    "code": "27-1021.00",
+    "parent": "27-1021",
+    "title": "Commercial and Industrial Designers"
+  },
+  {
+    "code": "27-1022.00",
+    "parent": "27-1022",
+    "title": "Fashion Designers"
+  },
+  {
+    "code": "27-1024.00",
+    "parent": "27-1024",
+    "title": "Graphic Designers"
+  },
+  {
+    "code": "27-1025.00",
+    "parent": "27-1025",
+    "title": "Interior Designers"
+  },
+  {
+    "code": "27-1027.00",
+    "parent": "27-1027",
+    "title": "Set and Exhibit Designers"
+  },
+  {
+    "code": "27-1029.00",
+    "parent": "27-1029",
+    "title": "Designers, All Other"
+  },
+  {
+    "code": "27-2012.00",
+    "parent": "27-2012",
+    "title": "Producers and Directors"
+  },
+  {
+    "code": "27-2012.03",
+    "parent": "27-2012",
+    "title": "Media Programming Directors"
+  },
+  {
+    "code": "27-2012.04",
+    "parent": "27-2012",
+    "title": "Talent Directors"
+  },
+  {
+    "code": "27-2012.05",
+    "parent": "27-2012",
+    "title": "Media Technical Directors/Managers"
+  },
+  {
+    "code": "27-2022.00",
+    "parent": "27-2022",
+    "title": "Coaches and Scouts"
+  },
+  {
+    "code": "27-2041.00",
+    "parent": "27-2041",
+    "title": "Music Directors and Composers"
+  },
+  {
+    "code": "27-3011.00",
+    "parent": "27-3011",
+    "title": "Broadcast Announcers and Radio Disc Jockeys"
+  },
+  {
+    "code": "27-3023.00",
+    "parent": "27-3023",
+    "title": "News Analysts, Reporters, and Journalists"
+  },
+  {
+    "code": "27-3031.00",
+    "parent": "27-3031",
+    "title": "Public Relations Specialists"
+  },
+  {
+    "code": "27-3041.00",
+    "parent": "27-3041",
+    "title": "Editors"
+  },
+  {
+    "code": "27-3042.00",
+    "parent": "27-3042",
+    "title": "Technical Writers"
+  },
+  {
+    "code": "27-3043.00",
+    "parent": "27-3043",
+    "title": "Writers and Authors"
+  },
+  {
+    "code": "27-3043.05",
+    "parent": "27-3043",
+    "title": "Poets, Lyricists and Creative Writers"
+  },
+  {
+    "code": "27-3091.00",
+    "parent": "27-3091",
+    "title": "Interpreters and Translators"
+  },
+  {
+    "code": "27-4031.00",
+    "parent": "27-4031",
+    "title": "Camera Operators, Television, Video, and Film"
+  },
+  {
+    "code": "27-4032.00",
+    "parent": "27-4032",
+    "title": "Film and Video Editors"
+  },
+  {
+    "code": "29-1011.00",
+    "parent": "29-1011",
+    "title": "Chiropractors"
+  },
+  {
+    "code": "29-1021.00",
+    "parent": "29-1021",
+    "title": "Dentists, General"
+  },
+  {
+    "code": "29-1022.00",
+    "parent": "29-1022",
+    "title": "Oral and Maxillofacial Surgeons"
+  },
+  {
+    "code": "29-1023.00",
+    "parent": "29-1023",
+    "title": "Orthodontists"
+  },
+  {
+    "code": "29-1024.00",
+    "parent": "29-1024",
+    "title": "Prosthodontists"
+  },
+  {
+    "code": "29-1029.00",
+    "parent": "29-1029",
+    "title": "Dentists, All Other Specialists"
+  },
+  {
+    "code": "29-1031.00",
+    "parent": "29-1031",
+    "title": "Dietitians and Nutritionists"
+  },
+  {
+    "code": "29-1041.00",
+    "parent": "29-1041",
+    "title": "Optometrists"
+  },
+  {
+    "code": "29-1051.00",
+    "parent": "29-1051",
+    "title": "Pharmacists"
+  },
+  {
+    "code": "29-1071.00",
+    "parent": "29-1071",
+    "title": "Physician Assistants"
+  },
+  {
+    "code": "29-1071.01",
+    "parent": "29-1071",
+    "title": "Anesthesiologist Assistants"
+  },
+  {
+    "code": "29-1081.00",
+    "parent": "29-1081",
+    "title": "Podiatrists"
+  },
+  {
+    "code": "29-1122.00",
+    "parent": "29-1122",
+    "title": "Occupational Therapists"
+  },
+  {
+    "code": "29-1122.01",
+    "parent": "29-1122",
+    "title": "Low Vision Therapists, Orientation and Mobility Specialists, and Vision Rehabilitation Therapists"
+  },
+  {
+    "code": "29-1123.00",
+    "parent": "29-1123",
+    "title": "Physical Therapists"
+  },
+  {
+    "code": "29-1125.00",
+    "parent": "29-1125",
+    "title": "Recreational Therapists"
+  },
+  {
+    "code": "29-1127.00",
+    "parent": "29-1127",
+    "title": "Speech-Language Pathologists"
+  },
+  {
+    "code": "29-1128.00",
+    "parent": "29-1128",
+    "title": "Exercise Physiologists"
+  },
+  {
+    "code": "29-1129.00",
+    "parent": "29-1129",
+    "title": "Therapists, All Other"
+  },
+  {
+    "code": "29-1129.01",
+    "parent": "29-1129",
+    "title": "Art Therapists"
+  },
+  {
+    "code": "29-1129.02",
+    "parent": "29-1129",
+    "title": "Music Therapists"
+  },
+  {
+    "code": "29-1131.00",
+    "parent": "29-1131",
+    "title": "Veterinarians"
+  },
+  {
+    "code": "29-1141.00",
+    "parent": "29-1141",
+    "title": "Registered Nurses"
+  },
+  {
+    "code": "29-1141.01",
+    "parent": "29-1141",
+    "title": "Acute Care Nurses"
+  },
+  {
+    "code": "29-1141.02",
+    "parent": "29-1141",
+    "title": "Advanced Practice Psychiatric Nurses"
+  },
+  {
+    "code": "29-1141.03",
+    "parent": "29-1141",
+    "title": "Critical Care Nurses"
+  },
+  {
+    "code": "29-1141.04",
+    "parent": "29-1141",
+    "title": "Clinical Nurse Specialists"
+  },
+  {
+    "code": "29-1151.00",
+    "parent": "29-1151",
+    "title": "Nurse Anesthetists"
+  },
+  {
+    "code": "29-1161.00",
+    "parent": "29-1161",
+    "title": "Nurse Midwives"
+  },
+  {
+    "code": "29-1171.00",
+    "parent": "29-1171",
+    "title": "Nurse Practitioners"
+  },
+  {
+    "code": "29-1181.00",
+    "parent": "29-1181",
+    "title": "Audiologists"
+  },
+  {
+    "code": "29-1211.00",
+    "parent": "29-1211",
+    "title": "Anesthesiologists"
+  },
+  {
+    "code": "29-1212.00",
+    "parent": "29-1212",
+    "title": "Cardiologists"
+  },
+  {
+    "code": "29-1213.00",
+    "parent": "29-1213",
+    "title": "Dermatologists"
+  },
+  {
+    "code": "29-1214.00",
+    "parent": "29-1214",
+    "title": "Emergency Medicine Physicians"
+  },
+  {
+    "code": "29-1215.00",
+    "parent": "29-1215",
+    "title": "Family Medicine Physicians"
+  },
+  {
+    "code": "29-1216.00",
+    "parent": "29-1216",
+    "title": "General Internal Medicine Physicians"
+  },
+  {
+    "code": "29-1217.00",
+    "parent": "29-1217",
+    "title": "Neurologists"
+  },
+  {
+    "code": "29-1218.00",
+    "parent": "29-1218",
+    "title": "Obstetricians and Gynecologists"
+  },
+  {
+    "code": "29-1221.00",
+    "parent": "29-1221",
+    "title": "Pediatricians, General"
+  },
+  {
+    "code": "29-1222.00",
+    "parent": "29-1222",
+    "title": "Physicians, Pathologists"
+  },
+  {
+    "code": "29-1223.00",
+    "parent": "29-1223",
+    "title": "Psychiatrists"
+  },
+  {
+    "code": "29-1224.00",
+    "parent": "29-1224",
+    "title": "Radiologists"
+  },
+  {
+    "code": "29-1229.00",
+    "parent": "29-1229",
+    "title": "Physicians, All Other"
+  },
+  {
+    "code": "29-1229.01",
+    "parent": "29-1229",
+    "title": "Allergists and Immunologists"
+  },
+  {
+    "code": "29-1229.02",
+    "parent": "29-1229",
+    "title": "Hospitalists"
+  },
+  {
+    "code": "29-1229.03",
+    "parent": "29-1229",
+    "title": "Urologists"
+  },
+  {
+    "code": "29-1229.04",
+    "parent": "29-1229",
+    "title": "Physical Medicine and Rehabilitation Physicians"
+  },
+  {
+    "code": "29-1229.05",
+    "parent": "29-1229",
+    "title": "Preventive Medicine Physicians"
+  },
+  {
+    "code": "29-1229.06",
+    "parent": "29-1229",
+    "title": "Sports Medicine Physicians"
+  },
+  {
+    "code": "29-1241.00",
+    "parent": "29-1241",
+    "title": "Ophthalmologists, Except Pediatric"
+  },
+  {
+    "code": "29-1242.00",
+    "parent": "29-1242",
+    "title": "Orthopedic Surgeons, Except Pediatric"
+  },
+  {
+    "code": "29-1243.00",
+    "parent": "29-1243",
+    "title": "Pediatric Surgeons"
+  },
+  {
+    "code": "29-1249.00",
+    "parent": "29-1249",
+    "title": "Surgeons, All Other"
+  },
+  {
+    "code": "29-1291.00",
+    "parent": "29-1291",
+    "title": "Acupuncturists"
+  },
+  {
+    "code": "29-1299.00",
+    "parent": "29-1299",
+    "title": "Healthcare Diagnosing or Treating Practitioners, All Other"
+  },
+  {
+    "code": "29-1299.01",
+    "parent": "29-1299",
+    "title": "Naturopathic Physicians"
+  },
+  {
+    "code": "29-1299.02",
+    "parent": "29-1299",
+    "title": "Orthoptists"
+  },
+  {
+    "code": "29-2011.00",
+    "parent": "29-2011",
+    "title": "Medical and Clinical Laboratory Technologists"
+  },
+  {
+    "code": "29-2011.01",
+    "parent": "29-2011",
+    "title": "Cytogenetic Technologists"
+  },
+  {
+    "code": "29-2011.02",
+    "parent": "29-2011",
+    "title": "Cytotechnologists"
+  },
+  {
+    "code": "29-2011.04",
+    "parent": "29-2011",
+    "title": "Histotechnologists"
+  },
+  {
+    "code": "29-2012.00",
+    "parent": "29-2012",
+    "title": "Medical and Clinical Laboratory Technicians"
+  },
+  {
+    "code": "29-2012.01",
+    "parent": "29-2012",
+    "title": "Histology Technicians"
+  },
+  {
+    "code": "29-2036.00",
+    "parent": "29-2036",
+    "title": "Medical Dosimetrists"
+  },
+  {
+    "code": "29-2091.00",
+    "parent": "29-2091",
+    "title": "Orthotists and Prosthetists"
+  },
+  {
+    "code": "29-9091.00",
+    "parent": "29-9091",
+    "title": "Athletic Trainers"
+  },
+  {
+    "code": "29-9092.00",
+    "parent": "29-9092",
+    "title": "Genetic Counselors"
+  },
+  {
+    "code": "33-3031.00",
+    "parent": "33-3031",
+    "title": "Fish and Game Wardens"
+  },
+  {
+    "code": "41-3031.00",
+    "parent": "41-3031",
+    "title": "Securities, Commodities, and Financial Services Sales Agents"
+  },
+  {
+    "code": "41-4011.00",
+    "parent": "41-4011",
+    "title": "Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products"
+  },
+  {
+    "code": "41-4011.07",
+    "parent": "41-4011",
+    "title": "Solar Sales Representatives and Assessors"
+  },
+  {
+    "code": "41-9031.00",
+    "parent": "41-9031",
+    "title": "Sales Engineers"
+  },
+  {
+    "code": "43-9081.00",
+    "parent": "43-9081",
+    "title": "Proofreaders and Copy Markers"
+  },
+  {
+    "code": "43-9111.00",
+    "parent": "43-9111",
+    "title": "Statistical Assistants"
+  },
+  {
+    "code": "45-2011.00",
+    "parent": "45-2011",
+    "title": "Agricultural Inspectors"
+  },
+  {
+    "code": "53-2011.00",
+    "parent": "53-2011",
+    "title": "Airline Pilots, Copilots, and Flight Engineers"
+  }
+]

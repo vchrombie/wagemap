@@ -1,1 +1,1 @@
-# prevailing-wage-map
+# wagemap
