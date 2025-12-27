@@ -22,12 +22,29 @@ const parseCurrency = (s) => Number(s.replace(/,/g, ""));
 const normalize = (s) =>
   s.toLowerCase().replace(" county", "").replace(/\s+/g, " ").trim();
 
+function LegendItem({ color, label }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+      <div
+        style={{
+          width: 14,
+          height: 14,
+          background: color,
+          borderRadius: 3,
+          border: "1px solid rgba(0,0,0,0.2)",
+        }}
+      />
+      <span>{label}</span>
+    </div>
+  );
+}
+
 export default function Map() {
   const mapRef = useRef(null);
   const countiesRef = useRef(null);
 
   const [soc, setSoc] = useState("11-1011");
-  const [salary, setSalary] = useState(100000);
+  const [salary, setSalary] = useState(150000);
 
   // ---------------- MAP INIT ----------------
   useEffect(() => {
@@ -138,14 +155,14 @@ export default function Map() {
     mapRef.current.setPaintProperty("county-fill", "fill-color", [
       "case",
       ["==", ["get", "level"], 4],
-      "#084594",
+      "#1E3A8A", // Level IV
       ["==", ["get", "level"], 3],
-      "#2171b5",
+      "#3B82F6", // Level III
       ["==", ["get", "level"], 2],
-      "#6baed6",
+      "#34D399", // Level II
       ["==", ["get", "level"], 1],
-      "#c6dbef",
-      "#eeeeee",
+      "#D1FAE5", // Level I
+      "#F3F4F6", // Below Level I / No data
     ]);
   }
 
@@ -154,6 +171,10 @@ export default function Map() {
     <>
       <div className="control-panel">
         <h1 className="title">Wagemap</h1>
+        <h2 className="subtitle">
+          See which wage level your job and salary fall under in each U.S.
+          county (tap on it).
+        </h2>
 
         <div className="section">
           <label className="label">Occupation</label>
@@ -240,6 +261,29 @@ export default function Map() {
           >
             OFLC Wage Data ↗
           </a>
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            zIndex: 1,
+            top: 600, // adjust if needed
+            left: 14,
+            background: "#ffffff",
+            padding: "8px 12px",
+            borderRadius: "8px",
+            boxShadow: "0 6px 16px rgba(0,0,0,0.15)",
+            display: "flex",
+            gap: 12,
+            alignItems: "center",
+            fontSize: 12,
+            fontWeight: 500,
+            color: "#374151",
+          }}
+        >
+          <LegendItem color="#D1FAE5" label="Level I" />
+          <LegendItem color="#34D399" label="Level II" />
+          <LegendItem color="#3B82F6" label="Level III" />
+          <LegendItem color="#1E3A8A" label="Level IV" />
         </div>
       </div>
 

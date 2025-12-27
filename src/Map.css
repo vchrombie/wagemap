@@ -24,6 +24,13 @@
     letter-spacing: -0.02em;
 }
 
+.subtitle {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
 .section {
     margin-bottom: 18px;
 }
