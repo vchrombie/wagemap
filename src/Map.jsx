@@ -38,6 +38,8 @@ export default function Map() {
 
   const [collapsed, setCollapsed] = useState(false);
   const [soc, setSoc] = useState("11-1011");
+  const [socText, setSocText] = useState("11-1011 – Chief Executives");
+
   const [salary, setSalary] = useState(150000);
 
   function handleShare() {
@@ -236,9 +238,10 @@ export default function Map() {
 
               <div className="row">
                 <SocAutocomplete
-                  value={soc}
-                  onSelect={(code) => {
+                  value={socText}
+                  onSelect={(code, display) => {
                     setSoc(code);
+                    setSocText(display);
                     updateLevels(code, salary);
                   }}
                 />
@@ -282,7 +285,7 @@ export default function Map() {
             </div>
 
             <div className="section">
-              <label className="label">Annual Salary</label>
+              <label className="label">Annual Base Salary</label>
 
               <div className="salary-input">
                 <span>$</span>

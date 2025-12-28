@@ -4,7 +4,7 @@ export default function SocAutocomplete({ value, onSelect }) {
   const wrapperRef = useRef(null);
 
   const [options, setOptions] = useState([]);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(value ? value : "");
   const [open, setOpen] = useState(false);
 
   // Load SOC options
@@ -33,8 +33,9 @@ export default function SocAutocomplete({ value, onSelect }) {
   );
 
   return (
-    <div ref={wrapperRef} style={{ position: "relative", width: 280 }}>
+    <div ref={wrapperRef} style={{ position: "relative", width: 400 }}>
       <input
+        className="input-box"
         type="text"
         value={query}
         placeholder="Enter job title or SOC code"
@@ -43,9 +44,7 @@ export default function SocAutocomplete({ value, onSelect }) {
           setQuery(e.target.value);
           setOpen(true);
         }}
-        style={{ width: "100%", padding: "6px" }}
       />
-
       {open && filtered.length > 0 && (
         <div
           style={{
@@ -63,8 +62,9 @@ export default function SocAutocomplete({ value, onSelect }) {
             <div
               key={o.code}
               onClick={() => {
-                onSelect(o.parent);
-                setQuery(`${o.code} – ${o.title}`);
+                const display = `${o.code} – ${o.title}`;
+                onSelect(o.parent, display);
+                setQuery(display);
                 setOpen(false);
               }}
               style={{

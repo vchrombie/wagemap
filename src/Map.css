@@ -260,3 +260,16 @@
 .info-tooltip a:hover {
     text-decoration: underline;
 }
+
+.input-box {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-box:focus {
+    border-color: #2563eb;
+}
