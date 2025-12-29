@@ -18,10 +18,72 @@ const USA_BOUNDS = [
 
 const formatCurrency = (n) => (n || n === 0 ? n.toLocaleString("en-US") : "");
 const parseCurrency = (s) => Number(String(s).replace(/,/g, ""));
+const formatAnnualToK = (value) => {
+  if (!Number.isFinite(value)) return "—";
+  const rounded = Math.round(value / 1000);
+  return `$${rounded.toLocaleString("en-US")}K`;
+};
 
 // Must match your preprocessing normalization
 const normalize = (s) =>
   s.toLowerCase().replace(" county", "").replace(/\s+/g, " ").trim();
+
+const LEVEL_KEYS = ["I", "II", "III", "IV"];
+const LEVEL_COLORS = {
+  1: "#FEF3C7",
+  2: "#F59E0B",
+  3: "#8B5CF6",
+  4: "#4C1D95",
+};
+
+function walkCoords(coords, cb) {
+  if (!Array.isArray(coords)) return;
+  if (typeof coords[0] === "number") {
+    cb(coords);
+  } else {
+    coords.forEach((c) => walkCoords(c, cb));
+  }
+}
+
+function getBoundsFromGeometry(geometry) {
+  if (!geometry || !geometry.coordinates) return null;
+
+  let minLng = Infinity;
+  let minLat = Infinity;
+  let maxLng = -Infinity;
+  let maxLat = -Infinity;
+
+  walkCoords(geometry.coordinates, ([lng, lat]) => {
+    if (lng < minLng) minLng = lng;
+    if (lat < minLat) minLat = lat;
+    if (lng > maxLng) maxLng = lng;
+    if (lat > maxLat) maxLat = lat;
+  });
+
+  if (!Number.isFinite(minLng)) return null;
+
+  return [
+    [minLng, minLat],
+    [maxLng, maxLat],
+  ];
+}
+
+function getFeatureCenter(feature) {
+  const bounds = getBoundsFromGeometry(feature?.geometry);
+  if (!bounds) return null;
+
+  return [(bounds[0][0] + bounds[1][0]) / 2, (bounds[0][1] + bounds[1][1]) / 2];
+}
+
+function mergeBounds(a, b) {
+  if (!a) return b;
+  if (!b) return a;
+
+  return [
+    [Math.min(a[0][0], b[0][0]), Math.min(a[0][1], b[0][1])],
+    [Math.max(a[1][0], b[1][0]), Math.max(a[1][1], b[1][1])],
+  ];
+}
 
 function LegendItem({ color, label }) {
   return (
@@ -35,12 +97,19 @@ function LegendItem({ color, label }) {
 export default function Map() {
   const mapRef = useRef(null);
   const countiesRef = useRef(null);
+  const countyFeatureMapRef = useRef({});
+  const countiesByStateRef = useRef({});
+  const wageTableRef = useRef(null);
 
   const [collapsed, setCollapsed] = useState(false);
   const [soc, setSoc] = useState("11-1011");
   const [socText, setSocText] = useState("11-1011 – Chief Executives");
 
   const [salary, setSalary] = useState(150000);
+  const [stateOptions, setStateOptions] = useState([]);
+  const [countyOptions, setCountyOptions] = useState([]);
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedCounty, setSelectedCounty] = useState("");
 
   function handleShare() {
     const url = window.location.href;
@@ -75,6 +144,8 @@ export default function Map() {
       const counties = await countyRes.json();
       countiesRef.current = counties;
 
+      prepareLocationData(counties);
+
       map.addSource("counties", {
         type: "geojson",
         data: counties,
@@ -86,7 +157,7 @@ export default function Map() {
         source: "counties",
         paint: {
           "fill-color": "#F3F4F6",
-          "fill-opacity": 0.85,
+          "fill-opacity": 0.8,
         },
       });
 
@@ -95,27 +166,18 @@ export default function Map() {
         type: "line",
         source: "counties",
         paint: {
-          "line-color": "#ffffff",
-          "line-width": 0.3,
+          "line-color": "#9ca3af",
+          "line-width": 1,
+          "line-opacity": 0.9,
         },
+        layout: { "line-join": "round" },
       });
 
       map.on("click", "county-fill", (e) => {
         const f = e.features?.[0];
         if (!f) return;
 
-        const state = STATE_FP_TO_ABBR[f.properties.STATEFP];
-        const level = f.properties.level ?? "< 1";
-
-        new mapboxgl.Popup()
-          .setLngLat(e.lngLat)
-          .setHTML(
-            `<strong>${f.properties.NAME}, ${state}</strong><br/>
-             <div style="margin-top:6px;text-align:center;">
-               Level <b>${level}</b>
-             </div>`
-          )
-          .addTo(map);
+        showCountyPopup(f, e.lngLat);
       });
 
       map.on("mouseenter", "county-fill", () => {
@@ -133,17 +195,49 @@ export default function Map() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  function prepareLocationData(countiesGeojson) {
+    const stateSet = new Set();
+    const byState = {};
+    const featureMap = {};
+
+    countiesGeojson.features.forEach((f) => {
+      const abbr = STATE_FP_TO_ABBR[f.properties.STATEFP];
+      if (!abbr) return;
+
+      stateSet.add(abbr);
+      featureMap[f.properties.GEOID] = f;
+
+      if (!byState[abbr]) byState[abbr] = [];
+      byState[abbr].push({
+        name: f.properties.NAME,
+        geoid: f.properties.GEOID,
+      });
+    });
+
+    Object.values(byState).forEach((list) =>
+      list.sort((a, b) => a.name.localeCompare(b.name))
+    );
+
+    countiesByStateRef.current = byState;
+    countyFeatureMapRef.current = featureMap;
+    setStateOptions(Array.from(stateSet).sort());
+  }
+
   // ---------------- UPDATE LEVELS ----------------
   async function updateLevels(selectedSoc, annualSalary) {
     if (!mapRef.current || !countiesRef.current) return;
 
-    const hourly = annualSalary / HOURS_PER_YEAR;
+    const annual = Number(annualSalary);
+    if (!Number.isFinite(annual)) return;
+
+    const hourly = annual / HOURS_PER_YEAR;
 
     const socRes = await fetch(`/data/soc/${selectedSoc}.json`);
     if (!socRes.ok) return;
 
     const wageTable = await socRes.json();
     const counties = structuredClone(countiesRef.current);
+    wageTableRef.current = wageTable;
 
     counties.features.forEach((f) => {
       delete f.properties.level;
@@ -166,22 +260,148 @@ export default function Map() {
 
     const src = mapRef.current.getSource("counties");
     if (src) src.setData(counties);
+    countiesRef.current = counties;
+    countyFeatureMapRef.current = Object.fromEntries(
+      counties.features.map((f) => [f.properties.GEOID, f])
+    );
 
     mapRef.current.setPaintProperty("county-fill", "fill-color", [
       "case",
       ["==", ["get", "level"], 4],
-      "#4C1D95", // Level IV
+      LEVEL_COLORS[4], // Level IV
       ["==", ["get", "level"], 3],
-      "#8B5CF6", // Level III
+      LEVEL_COLORS[3], // Level III
       ["==", ["get", "level"], 2],
-      "#F59E0B", // Level II
+      LEVEL_COLORS[2], // Level II
       ["==", ["get", "level"], 1],
-      "#FEF3C7", // Level I
+      LEVEL_COLORS[1], // Level I
       "#F3F4F6", // below/no-data
     ]);
   }
 
+  function fitToBounds(bounds, options = {}) {
+    if (!mapRef.current || !bounds) return;
+    mapRef.current.fitBounds(bounds, {
+      padding: 30,
+      duration: 600,
+      ...options,
+    });
+  }
+
+  function showCountyPopup(feature, lngLat) {
+    if (!mapRef.current || !feature) return;
+
+    const state = STATE_FP_TO_ABBR[feature.properties.STATEFP];
+    const wageTable = wageTableRef.current;
+    const key = state
+      ? `${state}|${normalize(`${feature.properties.NAME} County`)}`
+      : null;
+    const levelInfo = key && wageTable ? wageTable[key] : null;
+    const hasLevelData = Boolean(levelInfo);
+
+    const currentLevel = feature.properties.level;
+    const levelLabel = !hasLevelData
+      ? "No data"
+      : currentLevel === undefined
+      ? "Below L I"
+      : `L ${LEVEL_KEYS[currentLevel - 1]}`;
+    const levelClass =
+      !hasLevelData || currentLevel === undefined ? "level-none" : "has-level";
+    const levelColor =
+      currentLevel && LEVEL_COLORS[currentLevel]
+        ? LEVEL_COLORS[currentLevel]
+        : "#d1d5db";
+
+    const levelRows = LEVEL_KEYS.map((k, idx) => {
+      const levelNumber = idx + 1;
+      const hourly = levelInfo?.[k];
+      const annual = Number.isFinite(hourly)
+        ? formatAnnualToK(hourly * HOURS_PER_YEAR)
+        : "—";
+
+      return `<div class="level-chip${
+        currentLevel === levelNumber ? " is-active" : ""
+      }">
+                <div class="level-chip-label">L ${k}</div>
+                <div class="level-chip-salary">${annual}</div>
+              </div>`;
+    }).join("");
+
+    const point = lngLat || getFeatureCenter(feature);
+    if (!point) return;
+
+    new mapboxgl.Popup({ offset: 12 })
+      .setLngLat(point)
+      .setHTML(
+        `<div class="county-popup-content">
+           <div class="popup-top">
+             <div>
+               <div class="popup-title">${feature.properties.NAME}, ${state}</div>
+             </div>
+             <span class="level-badge ${levelClass}">
+               <span class="level-dot" style="background:${levelColor};"></span>
+               <span class="level-badge-text">${levelLabel}</span>
+             </span>
+           </div>
+           <div class="level-grid">
+             ${levelRows}
+           </div>
+         </div>`
+      )
+      .addClassName("county-popup")
+      .addTo(mapRef.current);
+  }
+
+  function zoomToState(stateAbbr) {
+    if (!countiesRef.current) return;
+
+    let bounds = null;
+    countiesRef.current.features
+      .filter((f) => STATE_FP_TO_ABBR[f.properties.STATEFP] === stateAbbr)
+      .forEach((f) => {
+        bounds = mergeBounds(bounds, getBoundsFromGeometry(f.geometry));
+      });
+
+    if (bounds) fitToBounds(bounds);
+  }
+
+  function zoomToCounty(geoid) {
+    const feature = countyFeatureMapRef.current[geoid];
+    if (!feature) return;
+
+    const bounds = getBoundsFromGeometry(feature.geometry);
+    if (bounds) fitToBounds(bounds, { maxZoom: 8 });
+
+    return feature;
+  }
+
+  function handleStateChange(nextState) {
+    setSelectedState(nextState);
+    setSelectedCounty("");
+    setCountyOptions(countiesByStateRef.current[nextState] ?? []);
+
+    if (!nextState) {
+      fitToBounds(USA_BOUNDS);
+    } else {
+      zoomToState(nextState);
+    }
+  }
+
+  function handleCountyChange(nextCounty) {
+    setSelectedCounty(nextCounty);
+    if (nextCounty) {
+      const feature = zoomToCounty(nextCounty);
+      showCountyPopup(feature);
+    }
+  }
+
   // ---------------- UI ----------------
+  const occupationDisplay = socText || "—";
+  const salaryDisplay =
+    salary === "" || Number.isNaN(Number(salary))
+      ? "—"
+      : `$${formatCurrency(Number(salary))}/yr`;
+
   return (
     <>
       <div className={`control-panel ${collapsed ? "collapsed" : ""}`}>
@@ -224,7 +444,6 @@ export default function Map() {
           </div>
         </div>
 
-        {/* Everything else hides when collapsed */}
         {!collapsed && (
           <>
             <div className="subtitle">
@@ -233,8 +452,48 @@ export default function Map() {
               desktop.
             </div>
 
-            <div className="section">
-              <label className="label">Occupation</label>
+            <div className="section panel-card">
+              <div className="label-row">
+                <label className="label">Location</label>
+                <span className="hint">Zooms to your selection</span>
+              </div>
+
+              <div className="row">
+                <select
+                  className="select-box select-half"
+                  value={selectedState}
+                  onChange={(e) => handleStateChange(e.target.value)}
+                >
+                  <option value="">All states</option>
+                  {stateOptions.map((abbr) => (
+                    <option key={abbr} value={abbr}>
+                      {abbr}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  className="select-box select-half"
+                  value={selectedCounty}
+                  onChange={(e) => handleCountyChange(e.target.value)}
+                  disabled={!selectedState}
+                >
+                  <option value="">
+                    {selectedState ? "Select county" : "Choose a state first"}
+                  </option>
+                  {countyOptions.map((county) => (
+                    <option key={county.geoid} value={county.geoid}>
+                      {county.name} County
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="section panel-card">
+              <div className="label-row">
+                <label className="label">Occupation</label>
+                <span className="hint">Type to search</span>
+              </div>
 
               <div className="row">
                 <SocAutocomplete
@@ -284,8 +543,11 @@ export default function Map() {
               </div>
             </div>
 
-            <div className="section">
-              <label className="label">Annual Base Salary</label>
+            <div className="section panel-card">
+              <div className="label-row">
+                <label className="label">Annual Base Salary</label>
+                <span className="hint">Used to determine level</span>
+              </div>
 
               <div className="salary-input">
                 <span>$</span>
@@ -293,6 +555,7 @@ export default function Map() {
                   type="text"
                   value={formatCurrency(salary)}
                   inputMode="numeric"
+                  style={{ paddingRight: 28 }}
                   onChange={(e) => {
                     const raw = parseCurrency(e.target.value);
                     if (Number.isNaN(raw)) return;
@@ -300,17 +563,46 @@ export default function Map() {
                     updateLevels(soc, raw);
                   }}
                 />
+                {salary !== "" && (
+                  <button
+                    type="button"
+                    className="clear-btn"
+                    aria-label="Clear salary"
+                    onClick={() => {
+                      setSalary("");
+                      updateLevels(soc, Number.NaN);
+                    }}
+                  >
+                    ×
+                  </button>
+                )}
               </div>
             </div>
-
-            {/* Legend */}
-            <div className="legend" title="Prevailing wage level color scale">
-              <LegendItem color="#FEF3C7" label="Level I" />
-              <LegendItem color="#F59E0B" label="Level II" />
-              <LegendItem color="#8B5CF6" label="Level III" />
-              <LegendItem color="#4C1D95" label="Level IV" />
+          </>
+        )}
+        {collapsed && (
+          <div className="pinned-summary" title="Current selection">
+            <div className="pinned-row">
+              <span>Occupation</span>
+              <span className="pinned-value">{occupationDisplay}</span>
             </div>
+            <div className="pinned-row">
+              <span>Salary</span>
+              <span className="pinned-value">{salaryDisplay}</span>
+            </div>
+          </div>
+        )}
 
+        {/* Legend stays visible even when collapsed */}
+        <div className="legend" title="Prevailing wage level color scale">
+          <LegendItem color={LEVEL_COLORS[1]} label="Level I" />
+          <LegendItem color={LEVEL_COLORS[2]} label="Level II" />
+          <LegendItem color={LEVEL_COLORS[3]} label="Level III" />
+          <LegendItem color={LEVEL_COLORS[4]} label="Level IV" />
+        </div>
+
+        {!collapsed && (
+          <>
             {/* Footer */}
             <div className="footer">
               <div className="footer-left">
@@ -365,7 +657,7 @@ export default function Map() {
               <a href="https://vchrombie.github.io/" target="_blank">
                 <strong>@vchrombie</strong>
               </a>{" "}
-              with copilot ️❤️
+              with codex ❤️
             </div>
           </>
         )}

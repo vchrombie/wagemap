@@ -44,7 +44,21 @@ export default function SocAutocomplete({ value, onSelect }) {
           setQuery(e.target.value);
           setOpen(true);
         }}
+        style={{ paddingRight: 28 }}
       />
+      {query && (
+        <button
+          type="button"
+          className="clear-btn"
+          aria-label="Clear occupation"
+          onClick={() => {
+            setQuery("");
+            setOpen(false);
+          }}
+        >
+          ×
+        </button>
+      )}
       {open && filtered.length > 0 && (
         <div
           style={{
