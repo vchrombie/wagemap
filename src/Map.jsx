@@ -23,6 +23,8 @@ mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
 export default function Map() {
   const mapRef = useRef(null);
+  const activePopupRef = useRef(null);
+  const activeFeatureRef = useRef(null);
   const countiesRef = useRef(null);
   const countyFeatureMapRef = useRef({});
   const countiesByStateRef = useRef({});
@@ -118,7 +120,10 @@ export default function Map() {
       updateLevels(soc, salary);
     });
 
-    return () => map.remove();
+    return () => {
+      activePopupRef.current?.remove();
+      map.remove();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -148,6 +153,12 @@ export default function Map() {
     countiesByStateRef.current = byState;
     countyFeatureMapRef.current = featureMap;
     setStateOptions(Array.from(stateSet).sort());
+  }
+
+  function clearActivePopup() {
+    activePopupRef.current?.remove();
+    activePopupRef.current = null;
+    activeFeatureRef.current = null;
   }
 
   // ---------------- UPDATE LEVELS ----------------
@@ -204,6 +215,16 @@ export default function Map() {
       LEVEL_COLORS[1], // Level I
       "#F3F4F6", // below/no-data
     ]);
+
+    const active = activeFeatureRef.current;
+    if (active) {
+      const updatedFeature = countyFeatureMapRef.current[active.geoid];
+      if (updatedFeature) {
+        showCountyPopup(updatedFeature, active.point);
+      } else {
+        clearActivePopup();
+      }
+    }
   }
 
   function fitToBounds(bounds, options = {}) {
@@ -257,7 +278,8 @@ export default function Map() {
     const point = lngLat || getFeatureCenter(feature);
     if (!point) return;
 
-    new mapboxgl.Popup({ offset: 12 })
+    activePopupRef.current?.remove();
+    const popup = new mapboxgl.Popup({ offset: 12, focusAfterOpen: false })
       .setLngLat(point)
       .setHTML(
         `<div class="county-popup-content">
@@ -277,6 +299,9 @@ export default function Map() {
       )
       .addClassName("county-popup")
       .addTo(mapRef.current);
+
+    activeFeatureRef.current = { geoid: feature.properties.GEOID, point };
+    activePopupRef.current = popup;
   }
 
   function zoomToState(stateAbbr) {
@@ -306,6 +331,7 @@ export default function Map() {
     setSelectedState(nextState);
     setSelectedCounty("");
     setCountyOptions(countiesByStateRef.current[nextState] ?? []);
+    clearActivePopup();
 
     if (!nextState) {
       fitToBounds(USA_BOUNDS);
@@ -319,6 +345,8 @@ export default function Map() {
     if (nextCounty) {
       const feature = zoomToCounty(nextCounty);
       showCountyPopup(feature);
+    } else {
+      clearActivePopup();
     }
   }
 
