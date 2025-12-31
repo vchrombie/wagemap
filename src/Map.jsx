@@ -54,7 +54,7 @@ export default function Map() {
 
     if (navigator.share) {
       navigator.share({
-        title: "WageMap",
+        title: "WageMap 🇺🇸",
         text: "Check prevailing wage levels by county",
         url,
       });

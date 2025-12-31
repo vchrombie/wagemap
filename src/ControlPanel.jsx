@@ -65,7 +65,7 @@ export default function ControlPanel({
             <div className="label-row">
               <label className="label">Location</label>
               <span className="hint">
-                Automatically zooms to the selected state or county
+                Automatically zooms to the state/county
               </span>
             </div>
 
@@ -174,11 +174,6 @@ export default function ControlPanel({
           </div>
 
           <div className="section panel-card">
-            {/* <div className="label-row">
-              <label className="label">H-1B lottery for Year 2027</label>
-              <span className="hint">Show weighted odds</span>
-            </div> */}
-
             <div className="toggle-row">
               <div className="toggle-copy">
                 {/* <div className="toggle-title">Are you interested to look the chances of your H1B lottery for the year 2027?</div> */}

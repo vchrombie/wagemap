@@ -11,6 +11,7 @@
     left: 12px;
     width: 380px;
     /* fixed width always */
+    --control-input-height: 40px;
     background: #ffffff;
     border: 1px solid #d0d7e2;
     border-radius: 16px;
@@ -104,6 +105,8 @@
     padding: 10px 12px;
     font-size: 16px;
     position: relative;
+    height: var(--control-input-height);
+    box-sizing: border-box;
 }
 
 .salary-input span {
@@ -117,6 +120,7 @@
     outline: none;
     width: 100%;
     font-size: 16px;
+    height: 100%;
 }
 
 .clear-btn {
@@ -404,6 +408,8 @@
     padding: 10px 12px;
     font-size: 16px;
     outline: none;
+    height: var(--control-input-height);
+    box-sizing: border-box;
 }
 
 .input-box:focus {
@@ -417,6 +423,8 @@
     padding: 10px 12px;
     font-size: 16px;
     background: #fff;
+    height: var(--control-input-height);
+    box-sizing: border-box;
 }
 
 .select-box:focus {
@@ -435,7 +443,7 @@
 }
 
 .hint {
-    font-size: 12px;
+    font-size: 11px;
     color: #6b7280;
 }
 
@@ -445,10 +453,28 @@
     background: transparent;
     box-shadow: none;
     border: none;
+    min-width: 360px;
 }
 
 .mapboxgl-popup.county-popup .mapboxgl-popup-tip {
     border-top-color: #f8fafc;
+}
+
+.mapboxgl-popup.county-popup .mapboxgl-popup-close-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #4b5563;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .county-popup-content {
@@ -459,7 +485,7 @@
     border: 1px solid #e5e7eb;
     border-radius: 12px;
     padding: 12px 14px;
-    min-width: 240px;
+    width: 300px;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
 }
 
