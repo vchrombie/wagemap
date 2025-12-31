@@ -21,6 +21,13 @@ import "./Map.css";
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
+const LOTTERY_2026_SELECTION = {
+  1: 15.29,
+  2: 30.58,
+  3: 45.87,
+  4: 61.16,
+};
+
 export default function Map() {
   const mapRef = useRef(null);
   const activePopupRef = useRef(null);
@@ -29,6 +36,7 @@ export default function Map() {
   const countyFeatureMapRef = useRef({});
   const countiesByStateRef = useRef({});
   const wageTableRef = useRef(null);
+  const lotteryEnabledRef = useRef(false);
 
   const [collapsed, setCollapsed] = useState(false);
   const [soc, setSoc] = useState("11-1011");
@@ -39,13 +47,14 @@ export default function Map() {
   const [countyOptions, setCountyOptions] = useState([]);
   const [selectedState, setSelectedState] = useState("");
   const [selectedCounty, setSelectedCounty] = useState("");
+  const [lotteryEnabled, setLotteryEnabled] = useState(false);
 
   function handleShare() {
     const url = window.location.href;
 
     if (navigator.share) {
       navigator.share({
-        title: "Wagemap",
+        title: "WageMap",
         text: "Check prevailing wage levels by county",
         url,
       });
@@ -95,9 +104,9 @@ export default function Map() {
         type: "line",
         source: "counties",
         paint: {
-          "line-color": "#9ca3af",
+          "line-color": "#e3e7ed",
           "line-width": 1,
-          "line-opacity": 0.9,
+          "line-opacity": 0.4,
         },
         layout: { "line-join": "round" },
       });
@@ -239,6 +248,7 @@ export default function Map() {
   function showCountyPopup(feature, lngLat) {
     if (!mapRef.current || !feature) return;
 
+    const lotteryEnabled = lotteryEnabledRef.current;
     const state = STATE_FP_TO_ABBR[feature.properties.STATEFP];
     const wageTable = wageTableRef.current;
     const key = state
@@ -248,11 +258,15 @@ export default function Map() {
     const hasLevelData = Boolean(levelInfo);
 
     const currentLevel = feature.properties.level;
+    const chance = currentLevel
+      ? LOTTERY_2026_SELECTION[currentLevel]
+      : undefined;
+
     const levelLabel = !hasLevelData
       ? "No data"
       : currentLevel === undefined
-      ? "Below L I"
-      : `L ${LEVEL_KEYS[currentLevel - 1]}`;
+      ? "Below Level I"
+      : `Level ${LEVEL_KEYS[currentLevel - 1]}`;
     const levelClass =
       !hasLevelData || currentLevel === undefined ? "level-none" : "has-level";
     const levelColor =
@@ -260,20 +274,41 @@ export default function Map() {
         ? LEVEL_COLORS[currentLevel]
         : "#d1d5db";
 
+    const salaryFloors = LEVEL_KEYS.map((k) => {
+      const hourly = levelInfo?.[k];
+      if (!Number.isFinite(hourly)) return "—";
+
+      const annual = hourly * HOURS_PER_YEAR;
+      return `${formatAnnualToK(annual)}+`;
+    });
+
     const levelRows = LEVEL_KEYS.map((k, idx) => {
       const levelNumber = idx + 1;
-      const hourly = levelInfo?.[k];
-      const annual = Number.isFinite(hourly)
-        ? formatAnnualToK(hourly * HOURS_PER_YEAR)
-        : "—";
+      const salaryRange = salaryFloors[idx];
+      const rowChance = lotteryEnabled
+        ? LOTTERY_2026_SELECTION[levelNumber]
+        : null;
+      const chanceCell =
+        lotteryEnabled && rowChance !== null
+          ? `<td class="chance-col">${
+              Number.isFinite(rowChance) ? `${rowChance}%` : "—"
+            }</td>`
+          : "";
 
-      return `<div class="level-chip${
-        currentLevel === levelNumber ? " is-active" : ""
+      return `<tr class="${
+        currentLevel === levelNumber ? "is-active-row" : ""
       }">
-                <div class="level-chip-label">L ${k}</div>
-                <div class="level-chip-salary">${annual}</div>
-              </div>`;
+                <td class="level-col">L ${k}</td>
+                <td class="salary-col">${salaryRange}</td>
+                ${chanceCell}
+              </tr>`;
     }).join("");
+
+    const chanceNote = lotteryEnabled ? "Chances of on 2027 lottery." : "";
+    const selectionLine =
+      lotteryEnabled && chance
+        ? `You have a ${chance}% probability of being selected to file an H-1B petition in 2027.`
+        : "";
 
     const point = lngLat || getFeatureCenter(feature);
     if (!point) return;
@@ -285,15 +320,33 @@ export default function Map() {
         `<div class="county-popup-content">
            <div class="popup-top">
              <div>
-               <div class="popup-title">${feature.properties.NAME}, ${state}</div>
+               <div class="popup-title">${
+                 feature.properties.NAME
+               }, ${state}</div>
              </div>
              <span class="level-badge ${levelClass}">
                <span class="level-dot" style="background:${levelColor};"></span>
                <span class="level-badge-text">${levelLabel}</span>
              </span>
            </div>
-           <div class="level-grid">
-             ${levelRows}
+           ${
+             selectionLine
+               ? `<div class="selection-line">${selectionLine}</div>`
+               : ""
+           }
+           <div class="level-table-wrapper">
+             <table class="level-table" role="table">
+               <thead>
+                 <tr>
+                   <th>Level</th>
+                   <th>Salary</th>
+                   ${lotteryEnabled ? "<th>Probability</th>" : ""}
+                 </tr>
+               </thead>
+               <tbody>
+                 ${levelRows}
+               </tbody>
+             </table>
            </div>
          </div>`
       )
@@ -368,6 +421,17 @@ export default function Map() {
     updateLevels(soc, Number.NaN);
   }
 
+  useEffect(() => {
+    lotteryEnabledRef.current = lotteryEnabled;
+    const active = activeFeatureRef.current;
+    if (!active) return;
+
+    const updatedFeature = countyFeatureMapRef.current[active.geoid];
+    if (updatedFeature) {
+      showCountyPopup(updatedFeature, active.point);
+    }
+  }, [lotteryEnabled]);
+
   // ---------------- UI ----------------
   const occupationDisplay = socText || "—";
   const salaryDisplay =
@@ -394,6 +458,8 @@ export default function Map() {
         occupationDisplay={occupationDisplay}
         salaryDisplay={salaryDisplay}
         handleShare={handleShare}
+        lotteryEnabled={lotteryEnabled}
+        onToggleLottery={() => setLotteryEnabled((v) => !v)}
       />
 
       <div id="map" />
