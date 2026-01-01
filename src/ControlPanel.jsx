@@ -111,7 +111,19 @@ export default function ControlPanel({
 
               <div className="info-wrapper">
                 <span className="info-icon" aria-label="Help">
-                  i
+                  <svg
+                    width="100"
+                    height="100"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                  </svg>{" "}
                 </span>
 
                 <div className="info-tooltip">
@@ -151,25 +163,45 @@ export default function ControlPanel({
               <span className="hint">Used to determine wage level</span>
             </div>
 
-            <div className="salary-input">
-              <span>$</span>
-              <input
-                type="text"
-                value={formatCurrency(salary)}
-                inputMode="numeric"
-                style={{ paddingRight: 28 }}
-                onChange={(e) => onSalaryChange(e.target.value)}
-              />
-              {salary !== "" && (
-                <button
-                  type="button"
-                  className="clear-btn"
-                  aria-label="Clear salary"
-                  onClick={onClearSalary}
+            <div className="salary-row">
+              <div className="salary-input">
+                <span>$</span>
+                <input
+                  type="text"
+                  value={formatCurrency(salary)}
+                  inputMode="numeric"
+                  style={{ paddingRight: 28 }}
+                  onChange={(e) => onSalaryChange(e.target.value)}
+                />
+                {salary !== "" && (
+                  <button
+                    type="button"
+                    className="clear-btn"
+                    aria-label="Clear salary"
+                    onClick={onClearSalary}
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
+
+              <button
+                type="button"
+                className="search-collapse-btn"
+                aria-label="Minimize control panel"
+                title="Minimize panel"
+                onClick={onToggleCollapse}
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
                 >
-                  ×
-                </button>
-              )}
+                  <path d="M10 2a8 8 0 015.292 13.708l4 4-1.414 1.414-4-4A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z" />
+                </svg>
+              </button>
             </div>
           </div>
 

@@ -33,7 +33,10 @@ export default function SocAutocomplete({ value, onSelect }) {
   );
 
   return (
-    <div ref={wrapperRef} style={{ position: "relative", width: 400 }}>
+    <div
+      ref={wrapperRef}
+      style={{ position: "relative", width: "100%", flex: 1, minWidth: 0 }}
+    >
       <input
         className="input-box"
         type="text"

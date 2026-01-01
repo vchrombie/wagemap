@@ -11,7 +11,7 @@
     left: 12px;
     width: 380px;
     /* fixed width always */
-    --control-input-height: 40px;
+    --control-input-height: 42px;
     background: #ffffff;
     border: 1px solid #d0d7e2;
     border-radius: 16px;
@@ -99,7 +99,7 @@
 .salary-input {
     display: flex;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 0;
     border: 1px solid #d1d5db;
     border-radius: 10px;
     padding: 10px 12px;
@@ -107,6 +107,7 @@
     position: relative;
     height: var(--control-input-height);
     box-sizing: border-box;
+    flex: 1;
 }
 
 .salary-input span {
@@ -144,20 +145,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 16px;
     margin-top: 8px;
 }
 
 .toggle-stack {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .toggle-copy {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex: 1;
 }
 
 .toggle-title {
@@ -168,8 +171,8 @@
 
 .toggle-subtitle {
     color: #6b7280;
-    font-size: 12px;
-    line-height: 1.4;
+    font-size: 11px;
+    line-height: 1.5;
 }
 
 .toggle {
@@ -211,6 +214,33 @@
     min-width: 32px;
     text-align: right;
     font-weight: 700;
+}
+
+.salary-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.search-collapse-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.search-collapse-btn:hover {
+    background: #e5e7eb;
+    border-color: #cbd5e1;
+    color: #111827;
 }
 
 /* Footer */
@@ -342,13 +372,13 @@
 }
 
 .info-icon {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     border-radius: 999px;
     background: #f3f4f6;
     border: 1px solid #d1d5db;
     color: #374151;
-    font-size: 14px;
+    font-size: 35px;
     font-weight: 800;
     display: flex;
     align-items: center;
@@ -461,20 +491,9 @@
 }
 
 .mapboxgl-popup.county-popup .mapboxgl-popup-close-button {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
-    color: #4b5563;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    right: 62px;
+    top: 2px;
+    font-size: 15px;
 }
 
 .county-popup-content {
