@@ -290,6 +290,17 @@
     text-decoration: underline;
 }
 
+.disclosures-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.disclosures-link:hover {
+    text-decoration: underline;
+}
+
 .credit {
     margin-top: 10px;
     font-size: 11px;

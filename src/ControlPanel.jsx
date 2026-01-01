@@ -294,6 +294,17 @@ export default function ControlPanel({
               </button>
             </div>
 
+            {/* add a disclosures link same like oflc-link */}
+
+            <a
+              className="disclosures-link"
+              href="https://github.com/vchrombie/wagemap/blob/master/disclosures.md"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Disclosures ↗
+            </a>
+
             <a
               className="oflc-link"
               href="https://flag.dol.gov/wage-data/wage-search"

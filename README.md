@@ -32,6 +32,7 @@ Interactive U.S. county-level prevailing wage explorer built with React, Vite, a
 - Autocomplete list: SOC codes/titles in `public/data/soc_codes.json`.
 - Geography: county polygons in `public/counties.geojson`.
 - Data is already bundled in the repo; no extra steps are required to run the app locally.
+- Disclosures: see [`disclosures.md`](disclosures.md) for sources, use, and privacy notes.
 
 ## Generating data
 
